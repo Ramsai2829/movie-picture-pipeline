@@ -14,7 +14,6 @@ resource "aws_vpc" "vpc" {
 resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.vpc.id
 }
-printf '%s\n' '.terraform/' '*.tfstate' '*.tfstate.*' '.terraform.lock.hcl' '.env' '*.pem' > .gitignore
 # Create a public subnet
 resource "aws_subnet" "public_subnet" {
   vpc_id                  = aws_vpc.vpc.id

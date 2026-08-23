@@ -1,0 +1,16 @@
+services:
+  backend:
+    build:
+      context: ./starter/backend
+    ports:
+      - "5000:5000"
+
+  frontend:
+    build:
+      context: ./starter/frontend
+      args:
+        REACT_APP_MOVIE_API_URL: https://dkegh4y5nt.prod.udacity-student-workspaces.com/proxy/5000
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
